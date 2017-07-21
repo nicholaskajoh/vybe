@@ -1,0 +1,13 @@
+/* register css */
+
+#registerCard {
+  background-color: #333;
+  width: 500px;
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  #registerCard {
+  	width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+<div id="sidebar">
+  <form id="searchForm" method="get">
+    <div class="input-group">
+      <input class="form-control" type="text" name="search" placeholder="Search...">
+      <span class="input-group-btn">
+        <button class="btn btn-outline-success" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    </div>
+  </form>
+
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Discover</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/songs" routerLinkActive="active">Songs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/albums" routerLinkActive="active">Albums</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/artists" routerLinkActive="active">Artists</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/playlists" routerLinkActive="active">Playlists</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+<h2>Sign up</h2>
+
+<div id="registerCard" class="card mx-auto">
+  <div class="card-block">
+    <form method="post" action="">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="name" placeholder="John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="email" name="email" placeholder="john.doe@vybe.me" required>
+      </div>
+
+      <div class="form-group">
+        <label>City</label>
+        <select class="form-control" required>
+          <option value="">== select ==</option>
+          <option>NOT AVAILABLE</option>
+          <option>Makurdi</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" type="password" name="password" required>
+      </div>
+
+      <div class="form-group text-right">
+        <button class="btn btn-outline-success" type="submit">Register</button>
+      </div>
+
+      <p><a routerLink="/auth/sign-in">Sign in</a></p>
+    </form>
+  </div>
+</div>

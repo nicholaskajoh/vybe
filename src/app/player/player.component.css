@@ -1,0 +1,39 @@
+/* player css */
+
+.player {
+  color: #fff;
+  background-color: #111;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#playerProgressBar {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#playerControls_R {
+  margin-top: 8px;
+}
+
+#volumeUp, #volumeDown {
+  cursor: pointer;
+}
+
+#playerControls_L span {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#playButton {
+  font-size: 23px;
+}
+
+#shuffleButton, #repeatButton {
+  font-size: 15px;
+}
+
+#songTime {
+  margin-right: 10px;
+}

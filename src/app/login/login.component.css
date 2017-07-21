@@ -1,0 +1,13 @@
+/* login css */
+
+#loginCard {
+  background-color: #333;
+  width: 500px;
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  #loginCard {
+  	width: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+/* sidebar */
+
+#sidebar, a {
+  color: #ccc;
+}
+
+a.active {
+  color: #00ae3a;
+}
+
+a:hover {
+  color: #636c72;
+}
+
+#searchForm {
+	padding-top: 10px;
+}

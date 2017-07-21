@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #222;
+}
+
+a, a:hover, a:focus {
+  color: #00ae3a;
+}
+
+.bg-vybe-green {
+  background-color: #00ae3a;
+}
+
+.bg-vybe-dark {
+  background-color: #222;
+}
+
+/* THUMBNAILS */
+/* sizes*/
+.thumb-64 {
+  width: 64px;
+  height: 64px;
+}
