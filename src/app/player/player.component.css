@@ -13,12 +13,27 @@
   cursor: pointer;
 }
 
+.player-controls {
+  display: flex;
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  .player-controls {
+    display: block;
+  }
+
+  #playerControls_L {
+    margin-right: 0;
+  }
+}
+
 #playerControls_R {
   margin-top: 8px;
 }
 
-#volumeUp, #volumeDown {
-  cursor: pointer;
+#playerControls_L {
+  margin-right: auto;
 }
 
 #playerControls_L span {
@@ -26,14 +41,26 @@
   margin-right: 10px;
 }
 
+#volumeUp, #volumeDown {
+  cursor: pointer;
+}
+
 #playButton {
   font-size: 23px;
 }
 
-#shuffleButton, #repeatButton {
+#repeatButton {
   font-size: 15px;
 }
 
+#songLike {
+  margin-right: 15px;
+}
+
+#songLike i {
+  cursor: pointer;
+}
+
 #songTime {
-  margin-right: 10px;
+  margin-right: 15px;
 }

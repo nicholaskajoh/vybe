@@ -1,72 +1,95 @@
 <div class="player fixed-bottom">
   <div class="container">
-    <!-- now playing -->
-    <div class="media">
-      <img class="d-flex mr-3 thumb-64" src="{{ playerAlbumArt }}" alt="New Hit Song">
-      <div class="media-body">
-        <h5 class="mt-0">{{ playerTitle }} <small>{{ playerArtists }} <span class="text-muted">{{ playerAlbum }}</span></small></h5>
+    <div class="row">
+      <!-- song -->
+      <div class="col-md-4">
+        <div class="media">
+          <img class="d-flex mr-3 thumb-64" src="{{ playerService.albumArt }}" alt="Song album art">
+          <div class="media-body">
+            <div style="font-size: 15px;">
+              <a routerLink="/song/{{ playerService.songCode }}">{{ playerService.title }}</a>
+            </div>
+            <div style="font-size: 12px;">{{ playerService.artists }}</div>
+            <div class="text-muted" style="font-size: 11px;">{{ playerService.album }}</div>
 
-        <div #playerProgressBar id="playerProgressBar" class="progress" (click)="seek($event)">
-          <div class="progress-bar bg-vybe-green" role="progressbar" style="height: 3px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" [style.width.%]="seekPercent"></div>
-        </div>
-     
-        <div id="playerControls_R" class="float-right">
-          <span id="songTime" class="text-muted">
-            <i class="fa fa-clock-o"></i> {{ time }}
-          </span>
-
-          <!-- volume controls -->
-          <span id="volumeDown" (click)="volumeDown()">
-            <i class="fa fa-volume-down"></i>
-          </span>
-          <span style="padding-left: 5px; padding-right: 5px;">
-            <span id="volumeLevel">{{ volume }}</span>/10
-          </span>
-          <span id="volumeUp" (click)="volumeUp()">
-            <i class="fa fa-volume-up"></i>
-          </span>
-          <!-- ./volume controls -->
-        </div>
-
-        <div id="playerControls_L">
-          <!-- play -->
-          <span id="playButton" (click)="play()">
-            <i class="fa fa-play"></i>
-          </span>
-          <!-- ./play -->
-
-          <!-- pause -->
-          <span id="pauseButton" (click)="pause()">
-            <i class="fa fa-pause"></i>
-          </span>
-          <!-- ./pause -->
-
-          <!-- step backward -->
-          <span id="stepBackwardButton" (click)="previous()">
-            <i class="fa fa-step-backward"></i>
-          </span>
-          <!-- ./step backward -->
-
-          <!-- step forward -->
-          <span id="stepForwardButton" (click)="next()">
-            <i class="fa fa-step-forward"></i>
-          </span>
-          <!-- ./step forward -->
-
-          <!-- shuffle -->
-          <span id="shuffleButton">
-            <i class="fa fa-random"></i>
-          </span>
-          <!-- ./shuffle -->
-
-          <!-- repeat -->
-          <span id="repeatButton">
-            <i class="fa fa-repeat"></i>
-          </span>
-          <!-- ./repeat -->
+            <!-- like -->
+            <div *ngIf="playerService.songLoaded" id="songLike">
+              <i class="fa fa-heart-o text-danger"></i> 21
+            </div>
+            <!-- ./like -->
+          </div>
         </div>
       </div>
+      <!-- ./song -->
+
+      <!-- player -->
+      <div class="col-md-8">
+        <div #playerProgressBar id="playerProgressBar" class="progress" (click)="seek($event)">
+          <div class="progress-bar bg-vybe-green" role="progressbar" style="height: 3px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" [style.width.%]="playerService.seekPercent"></div>
+        </div>
+      
+        <div class="player-controls">
+          <div id="playerControls_L">
+            <!-- play -->
+            <span id="playButton" (click)="playerService.play()">
+              <i class="fa fa-play"></i>
+            </span>
+            <!-- ./play -->
+
+            <!-- pause -->
+            <span id="pauseButton" (click)="playerService.pause()">
+              <i class="fa fa-pause"></i>
+            </span>
+            <!-- ./pause -->
+
+            <!-- step backward -->
+            <span id="stepBackwardButton" (click)="playerService.previous()">
+              <i class="fa fa-step-backward"></i>
+            </span>
+            <!-- ./step backward -->
+
+            <!-- step forward -->
+            <span id="stepForwardButton" (click)="playerService.next()">
+              <i class="fa fa-step-forward"></i>
+            </span>
+            <!-- ./step forward -->
+
+            <!-- repeat -->
+            <span id="repeatButton">
+              <i class="fa fa-repeat"></i>
+            </span>
+            <!-- ./repeat -->
+
+            <span id="playerStatus" class="text-muted">
+              {{ playerService.status }}
+            </span>
+
+            <span *ngIf="playerService.songLoaded" id="songPlaylistIndex" style="font-size: 12px;">
+              {{ playerService.songPlaylistIndex + 1 }} of {{ playerService.playlist.length }}
+            </span>
+          </div>
+
+          <div id="playerControls_R">
+            <span id="songTime" class="text-muted">
+              <i class="fa fa-clock-o"></i> {{ playerService.time }}
+            </span>
+
+            <!-- volume controls -->
+            <span id="volumeDown" (click)="playerService.volumeDown()">
+              <i class="fa fa-volume-down"></i>
+            </span>
+            <span style="padding-left: 5px; padding-right: 5px;">
+              <span id="volumeLevel">{{ playerService.volume }}</span>/10
+            </span>
+            <span id="volumeUp" (click)="playerService.volumeUp()">
+              <i class="fa fa-volume-up"></i>
+            </span>
+            <!-- ./volume controls -->
+          </div>
+        </div>
+      </div>
+      <!-- ./player -->
     </div>
-    <!-- ./now playing -->
+
   </div>
 </div>

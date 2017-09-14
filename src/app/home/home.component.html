@@ -3,13 +3,13 @@
 <p>The best songs, brewed fresh from Vybe...</p>
 
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-3" *ngFor="let song of songs | async">
     <div class="card bg-vybe-dark">
       <img class="card-img-top img-fluid" src="/assets/img/song.jpg" alt="Card image cap">
       <div class="card-block">
-        <p class="card-text"><a href="#"><strong>New Hit Song</strong></a> - Great Musician Ft. Another Great, Yet Another.</p>
+        <p class="card-text"><a href="#"><strong>{{ song.title }}</strong></a> - Great Musician Ft. Another Great, Yet Another.</p>
         <div class="text-right">
-          <a href="#" class="card-link"><i class="fa fa-play"></i></a>
+          <a href="javascript:void(0);" class="card-link" (click)="play(song.code)"><i class="fa fa-play"></i></a>
           <a href="#" class="card-link"><i class="fa fa-heart-o"></i></a>
         </div>
       </div>
